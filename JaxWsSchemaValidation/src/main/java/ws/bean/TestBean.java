@@ -5,18 +5,16 @@
  */
 package ws.bean;
 
-import com.sun.xml.internal.bind.v2.runtime.RuntimeUtil;
-import com.sun.xml.internal.ws.developer.SchemaValidation;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  *
  * @author 912867
  */
 @XmlRootElement
-@SchemaValidation
+
 public class TestBean {
 
     public TestBean() {
@@ -28,7 +26,6 @@ public class TestBean {
     }
 
     @XmlElement(name = "name", required = true, nillable = true)
-    @XmlJavaTypeAdapter(type = String.class,value = RuntimeUtil.ToStringAdapter.class)
     private String name;
     @XmlElement(name = "version", required = true, nillable = true)
     private Integer version;
